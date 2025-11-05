@@ -1,4 +1,11 @@
 import "@/assets/styles/globals.css";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import AuthProvider from "@/components/AuthProvider";
+import { ToastContainer } from "react-toastify";
+import { GlobalProvider } from "./context/GlobalContext";
+import "react-toastify/dist/ReactToastify.css";
+import "photoswipe/dist/photoswipe.css";
 export const metadata = {
   title: "Property",
   keywords: "rental,property,real estate",
@@ -6,11 +13,18 @@ export const metadata = {
 };
 const MainLayout = ({ children }) => {
   return (
-    <html>
-      <body>
-        <main>{children}</main>
-      </body>
-    </html>
+    <AuthProvider>
+      <GlobalProvider>
+        <html>
+          <body>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+            <ToastContainer />
+          </body>
+        </html>
+      </GlobalProvider>
+    </AuthProvider>
   );
 };
 

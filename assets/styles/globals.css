@@ -30,3 +30,7 @@ body {
 /* div {
   color: red;
 } */
+
+#Map_Pin-2 {
+  fill: initial !important;
+}
