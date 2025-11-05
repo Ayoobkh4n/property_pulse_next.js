@@ -1,5 +1,11 @@
 export { default } from "next-auth/middleware";
 
 export const config = {
-  matcher: ["/properties/add", "/profile", "/properties/saved", "/messages"],
+  matcher: [
+    "/((?!$|api|_next/static|_next/image|favicon.ico).*)",
+    "/properties/add",
+    "/profile",
+    "/properties/saved",
+    "/messages",
+  ],
 };
